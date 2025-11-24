@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacando una Sonrisa Más</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Fundación JSNS</title>
     <link rel="stylesheet" href="./public/css/index.css">
 </head>
 <body>
 
-    <div class="container py-5">
+    <div class="main-container">
 
         <section class="hero-section mb-5">
             <div class="row align-items-center">
@@ -30,17 +28,17 @@
                     </div>
                 </div>
 
-                <div class="col-6">
-                    <h2 class="fw-bold mb-3">¿Quiénes somos?</h2>
-                    <p class="lead fs-6">
-                        Sacando una sonrisa más, es un proyecto de ayuda social enfocada en ofrecer esperanza y apoyo real a las personas que, a pesar de sus esfuerzos, enfrentan condiciones de vida muy difíciles. A la vez, buscamos ser la voz de los animales abandonados que sufren en silencio en nuestras calles.
+                <div class="hero-text">
+                    <h2>¿Quiénes somos?</h2>
+                    <p>
+                        La Fundación JSNS, es un proyecto de ayuda social enfocada en ofrecer esperanza y apoyo real a las personas que, a pesar de sus esfuerzos, enfrentan condiciones de vida muy difíciles. A la vez, buscamos ser la voz de los animales abandonados que sufren en silencio en nuestras calles.
                         Nacimos de la iniciativa de un grupo de jóvenes comprometidos, con el profundo deseo de generar un cambio positivo y tangible. Creemos firmemente en el poder de la empatía y la solidaridad para transformar realidades, inspirando una cultura de apoyo mutuo donde cada pequeño esfuerzo se suma para construir un mundo más justo y compasivo.
                     </p>
                 </div>
             </div>
         </section>
 
-        <hr class="my-5">
+        <hr class="divider">
 
         <section class="image-grid mb-5 text-center">
             <h2 class="mb-4 fw-bold">Objetivos</h2>
@@ -66,19 +64,19 @@
             </div>
         </section>
 
-        <hr class="my-5">
+        <hr class="divider">
 
-        <section class="text-image-section mb-5">
-            <h2 class="mb-4 fw-bold">Metodología y desarrollo</h2>
-            <div class="row align-items-center">
-                <div class="col-8">
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><strong>Recolección de donaciones:</strong> Alimentos, ropa, juguetes, útiles de limpieza.</li>
-                        <li class="mb-2"><strong>Proyectos de recaudación:</strong> Organización de eventos y campañas de sensibilización.</li>
-                        <li class="mb-2"><strong>Formación de kits de ayuda:</strong> Preparación y distribución a los beneficiarios.</li>
-                        <li class="mb-2"><strong>Envío de recursos:</strong> Distribución de recursos sobrantes a albergues y fundaciones.</li>
+        <section class="methodology-section">
+            <h2>Metodología y desarrollo</h2>
+            <div class="methodology-content">
+                <div class="methodology-text">
+                    <ul>
+                        <li><strong>Recolección de donaciones:</strong> Alimentos, ropa, juguetes, útiles de limpieza.</li>
+                        <li><strong>Proyectos de recaudación:</strong> Organización de eventos y campañas de sensibilización.</li>
+                        <li><strong>Formación de kits de ayuda:</strong> Preparación y distribución a los beneficiarios.</li>
+                        <li><strong>Envío de recursos:</strong> Distribución de recursos sobrantes a albergues y fundaciones.</li>
                     </ul>
-                    <p class="mt-3 fw-bold">
+                    <p class="qr-cta">
                         Puedes informarte más escaneando el código QR &rarr;
                     </p>
                 </div>
@@ -88,22 +86,18 @@
             </div>
         </section>
 
-        <hr class="my-5">
+        <hr class="divider">
 
-        <section class="image-slider-section mb-5">
-            <h2 class="mb-4 fw-bold text-center">Comentarios</h2>
+        <section class="comments-section">
+            <h2>Comentarios</h2>
             
-            <div id="commentsCarousel" class="carousel slide">
-                <div class="d-flex justify-content-end mb-2">
-                    <button class="btn btn-outline-primary me-2" type="button" data-bs-target="#commentsCarousel" data-bs-slide="prev">
-                        &#10094;
-                    </button>
-                    <button class="btn btn-outline-primary" type="button" data-bs-target="#commentsCarousel" data-bs-slide="next">
-                        &#10095;
-                    </button>
+            <div class="comments-slider-wrapper">
+                <div class="slider-controls">
+                    <button id="prevBtn" class="nav-btn">&#10094;</button>
+                    <button id="nextBtn" class="nav-btn">&#10095;</button>
                 </div>
 
-                <div class="carousel-inner">
+                <div class="comments-slides-container">
                     
                     <div class="carousel-item active">
                         <div class="row text-center">
@@ -153,6 +147,46 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /* --- Lógica Hero Slider (Automático) --- */
+        let currentHeroIndex = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+            });
+        }
+
+        setInterval(() => {
+            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+            showHeroSlide(currentHeroIndex);
+        }, 3000); // 3 segundos
+
+        /* --- Lógica Comentarios Slider (Manual) --- */
+        let currentCommentIndex = 0;
+        const commentSlides = document.querySelectorAll('.comment-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showCommentSlide(index) {
+            commentSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentCommentIndex = (currentCommentIndex + 1) % commentSlides.length;
+            showCommentSlide(currentCommentIndex);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentCommentIndex = (currentCommentIndex - 1 + commentSlides.length) % commentSlides.length;
+            showCommentSlide(currentCommentIndex);
+        });
+    </script>
+
 </body>
 </html>

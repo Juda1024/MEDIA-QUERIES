@@ -1,36 +1,215 @@
- /* Estilos generales para simular tu estructura sin media queries complejas */
- .img-cover {
-     width: 100%;
-     height: 400px;
-     /* Ajustable en tu CSS aparte */
-     object-fit: cover;
-     border-radius: 8px;
- }
+/* ===== RESET BÁSICO ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
- .obj-img {
-     width: 100%;
-     height: 200px;
-     object-fit: cover;
-     border-radius: 8px;
- }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    /* Esto asegura que si la pantalla es chica, aparezca el scroll horizontal en vez de deformarse */
+    min-width: 1200px; 
+}
 
- .qr-img {
-     max-width: 100%;
-     height: auto;
- }
+/* CONTENEDOR PRINCIPAL: 
+   Aquí está la clave. Le damos un ancho FIJO de 1200px.
+   No usamos porcentajes (%). 
+*/
+.main-container {
+    width: 1200px; 
+    margin: 0 auto; /* Centrado en pantallas grandes */
+    padding: 40px 0;
+}
 
- .comment-img {
-     width: 100%;
-     height: auto;
-     border-radius: 50%;
-     /* Asumiendo que los comentarios suelen ser avatares, si no, quítalo */
-     border: 2px solid #ddd;
- }
+/* Títulos generales */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
 
- /* Para centrar los controles del carrusel de comentarios fuera de la imagen */
- .carousel-control-prev,
- .carousel-control-next {
-     filter: invert(100%);
-     /* Hace las flechas negras para fondo blanco */
-     width: 5%;
- }
+/* Línea divisoria */
+.divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 60px 0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    /* Espacio fijo entre columnas */
+    gap: 50px; 
+}
+
+/* Slider del Hero: Tamaño FIJO */
+.hero-slider-container {
+    width: 600px; /* Mitad exacta de 1200px menos el gap */
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0; /* Evita que se encoja nunca */
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px; /* Fijo */
+    height: 400px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Texto del Hero: Tamaño FIJO */
+.hero-text {
+    width: 550px; /* El resto del espacio disponible */
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* ===== OBJETIVOS (GRID) ===== */
+.objectives-section {
+    text-align: center;
+}
+
+.objectives-grid {
+    display: flex;
+    justify-content: space-between;
+    /* Sin gap flexible, usaremos anchos exactos */
+}
+
+.objective-card {
+    width: 380px; /* 3 tarjetas de 380px + espacios = 1200px aprox */
+    padding: 10px;
+    border: 1px solid transparent; /* Para mantener caja */
+}
+
+.objective-card img {
+    width: 360px; /* Imagen fija */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ===== METODOLOGÍA ===== */
+.methodology-content {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio fijo */
+}
+
+.methodology-text {
+    width: 750px; /* Ancho fijo para texto */
+}
+
+.methodology-text ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.methodology-text li {
+    margin-bottom: 10px;
+}
+
+.qr-cta {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.methodology-image {
+    width: 400px; /* Ancho fijo para contenedor de imagen */
+    text-align: center;
+}
+
+.methodology-image img {
+    width: 300px; /* Tamaño fijo de imagen QR */
+    height: auto;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* ===== COMENTARIOS (SLIDER) ===== */
+.comments-section {
+    text-align: center;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: flex-end;
+    width: 1200px; /* Asegura que los botones estén alineados al contenedor */
+    margin: 0 auto 10px auto;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 5px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.comments-slider-wrapper {
+    width: 1200px; /* Contenedor fijo */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.comments-slides-container {
+    position: relative;
+    width: 1200px;
+}
+
+.comment-slide {
+    display: none;
+    justify-content: space-between; 
+    width: 1200px; /* Fijo */
+    animation: fadeEffect 0.5s;
+}
+
+.comment-slide.active {
+    display: flex;
+}
+
+.comment-slide img {
+    width: 380px; /* Tamaño fijo por imagen (380x3 = 1140, sobra espacio para margen) */
+    height: 380px; /* Cuadradas fijas */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #eee;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
