@@ -43,7 +43,6 @@ h2 {
     gap: 50px; 
 }
 
-/* Slider del Hero: Tamaño FIJO */
 .hero-slider-container {
     width: 600px; 
     height: 400px;
@@ -108,22 +107,22 @@ h2 {
 }
 
 /* ===== METODOLOGÍA ===== */
-.contenido {
+.methodology-content {
     display: flex;
     align-items: center;
     gap: 50px; 
 }
 
-.texto {
+.methodology-text {
     width: 750px; 
 }
 
-.texto ul {
+.methodology-text ul {
     list-style: none;
     margin-bottom: 20px;
 }
 
-.texto li {
+.methodology-text li {
     margin-bottom: 10px;
 }
 
@@ -132,12 +131,12 @@ h2 {
     margin-top: 15px;
 }
 
-.imagen {
+.methodology-image {
     width: 400px; 
     text-align: center;
 }
 
-.imagen img {
+.methodology-image img {
     width: 300px; 
     height: auto;
     padding: 10px;
@@ -147,7 +146,7 @@ h2 {
 }
 
 /* ===== COMENTARIOS (SLIDER) ===== */
-.seccion-comentarios {
+.comments-section {
     text-align: center;
 }
 
@@ -169,31 +168,31 @@ h2 {
     border-radius: 4px;
 }
 
-.slide-comentarios {
-    width: 1200px; /* Contenedor fijo */
+.comments-slider-wrapper {
+    width: 1200px; 
     margin: 0 auto;
     overflow: hidden;
 }
 
-.contenedor-slides-comentarios {
+.comments-slides-container {
     position: relative;
     width: 1200px;
 }
 
-.comentarios-slide {
+.comment-slide {
     display: none;
     justify-content: space-between; 
-    width: 1200px; /* Fijo */
+    width: 1200px; 
     animation: fadeEffect 0.5s;
 }
 
-.comentarios-slide.active {
+.comment-slide.active {
     display: flex;
 }
 
-.comentarios-slide img {
-    width: 380px; /* Tamaño fijo por imagen*/
-    height: 380px; /* Cuadradas fijas */
+.comment-slide img {
+    width: 380px; 
+    height: 380px; 
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #eee;
@@ -205,9 +204,9 @@ h2 {
     to {opacity: 1;}
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVE)
-   ========================================= */
+/* ==============
+   MEDIA QUERIES
+   ==============*/
 
 /* --- 1. ESCRITORIOS GRANDES (Más de 1281px) --- */
 
@@ -222,7 +221,7 @@ h2 {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     body {
-        background-color: green; /* Test */
+        background-color: green; 
         min-width: 100%; 
     }
 
@@ -247,17 +246,17 @@ h2 {
         height: auto;
     }
 
-    .slider-controls, .slide-comentarios, .contenedor-slides-comentarios, .comentarios-slide {
+    .slider-controls, .comments-slider-wrapper, .comments-slides-container, .comment-slide {
         width: 100%;
     }
-    .comentarios-slide img {
+    .comment-slide img {
         width: 32%; 
         height: auto;
     }
     
-    .texto { width: 60%; }
-    .imagen { width: 35%; }
-    .imagen img { width: 100%; }
+    .methodology-text { width: 60%; }
+    .methodology-image { width: 35%; }
+    .methodology-image img { width: 100%; }
 }
 
 
@@ -265,7 +264,7 @@ h2 {
 
 @media (min-width: 768px) and (max-width: 1024px) {
     body {
-        background-color: blue; /* Test */
+        background-color: blue; 
         min-width: 100%;
     }
 
@@ -297,22 +296,21 @@ h2 {
     .methodology-content {
         flex-direction: column;
     }
-    .texto, .imagen {
+    .methodology-text, .methodology-image {
         width: 100%;
     }
 
-    /* COMENTARIOS */
-    .slider-controls, .slide-comentarios, .contenedor-slides-comentarios, .comentarios-slide {
+    .slider-controls, .comments-slider-wrapper, .comments-slides-container, .comment-slide {
         width: 100%;
     }
-    .comentarios-slide img {
+    .comment-slide img {
         width: 32%;
         height: auto;
     }
 }
 
 
-/* --- 4. MÓVILES (Menos de 767px) --- */
+/* --- 4. MÓVILES --- */
 
 @media (max-width: 767px) {
     body {
@@ -349,7 +347,7 @@ h2 {
     }
     .objective-card {
         width: 100%;
-        border-bottom: 1px solid red; /* Separador */
+        border-bottom: 1px solid #ddd; 
     }
     .objective-card img {
         width: 100%;
@@ -360,17 +358,17 @@ h2 {
     .methodology-content {
         flex-direction: column-reverse; 
     }
-    .texto, .imagen {
+    .methodology-text, .methodology-image {
         width: 100%;
     }
 
    
     .slider-controls { width: 100%; justify-content: center; }
-    .slide-comentarios, .contenedor-slides-comentarios, .comentarios-slide {
+    .comments-slider-wrapper, .comments-slides-container, .comment-slide {
         width: 100%;
     }
    
-    .comentarios-slide img {
+    .comment-slide img {
         width: 31%; 
         height: auto; 
     }
