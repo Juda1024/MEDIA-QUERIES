@@ -57,10 +57,10 @@
 
         <hr class="divider">
 
-        <section class="methodology-section">
+        <section class="seccion">
             <h2>Metodología y desarrollo</h2>
-            <div class="methodology-content">
-                <div class="methodology-text">
+            <div class="contenido">
+                <div class="texto">
                     <ul>
                         <li><strong>Recolección de donaciones:</strong> Alimentos, ropa, juguetes, útiles de limpieza.</li>
                         <li><strong>Proyectos de recaudación:</strong> Organización de eventos y campañas de sensibilización.</li>
@@ -71,7 +71,7 @@
                         Puedes informarte más escaneando el código QR &rarr;
                     </p>
                 </div>
-                <div class="methodology-image">
+                <div class="imagen">
                     <img src="./public/assets/images/qr.webp" alt="Código QR">
                 </div>
             </div>
@@ -79,30 +79,30 @@
 
         <hr class="divider">
 
-        <section class="comments-section">
+        <section class="seccion-comentarios">
             <h2>Comentarios</h2>
             
-            <div class="comments-slider-wrapper">
+            <div class="slide-comentarios">
                 <div class="slider-controls">
                     <button id="prevBtn" class="nav-btn">&#10094;</button>
                     <button id="nextBtn" class="nav-btn">&#10095;</button>
                 </div>
 
-                <div class="comments-slides-container">
+                <div class="contenedor-slides-comentarios">
                     
-                    <div class="comment-slide active">
+                    <div class="comentarios-slide active">
                         <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="1">
                         <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="2">
                         <img src="./public/assets/images/comen1.webp" class="comment-img" alt="3">
                     </div>
 
-                    <div class="comment-slide">
+                    <div class="comentarios-slide">
                         <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="4">
                         <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="5">
                         <img src="./public/assets/images/comen1.webp" class="comment-img" alt="6">
                     </div>
 
-                    <div class="comment-slide">
+                    <div class="comentarios-slide">
                         <img src="./public/assets/images/comen1.webp" class="comment-img" alt="7">
                         <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="8">
                         <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="9">
@@ -132,7 +132,7 @@
         }
 
         let currentCommentIndex = 0;
-        const commentSlides = document.querySelectorAll('.comment-slide');
+        const commentSlides = document.querySelectorAll('.comentarios-slide');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
 
