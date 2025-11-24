@@ -1,0 +1,36 @@
+ /* Estilos generales para simular tu estructura sin media queries complejas */
+ .img-cover {
+     width: 100%;
+     height: 400px;
+     /* Ajustable en tu CSS aparte */
+     object-fit: cover;
+     border-radius: 8px;
+ }
+
+ .obj-img {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 8px;
+ }
+
+ .qr-img {
+     max-width: 100%;
+     height: auto;
+ }
+
+ .comment-img {
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+     /* Asumiendo que los comentarios suelen ser avatares, si no, quítalo */
+     border: 2px solid #ddd;
+ }
+
+ /* Para centrar los controles del carrusel de comentarios fuera de la imagen */
+ .carousel-control-prev,
+ .carousel-control-next {
+     filter: invert(100%);
+     /* Hace las flechas negras para fondo blanco */
+     width: 5%;
+ }
