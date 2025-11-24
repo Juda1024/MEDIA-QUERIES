@@ -115,7 +115,6 @@
     </div>
 
     <script>
-        /* --- Lógica Hero Slider (Automático) --- */
         let currentHeroIndex = 0;
         const heroSlides = document.querySelectorAll('.hero-slide');
         
@@ -125,8 +124,6 @@
                 if (i === index) slide.classList.add('active');
             });
         }
-
-        // Solo activar intervalo si existen slides
         if(heroSlides.length > 0) {
             setInterval(() => {
                 currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
@@ -134,7 +131,6 @@
             }, 3000); 
         }
 
-        /* --- Lógica Comentarios Slider (Manual) --- */
         let currentCommentIndex = 0;
         const commentSlides = document.querySelectorAll('.comment-slide');
         const prevBtn = document.getElementById('prevBtn');

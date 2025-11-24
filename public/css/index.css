@@ -1,4 +1,3 @@
-/* ===== RESET BÁSICO ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,21 +9,16 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-    /* Esto asegura que si la pantalla es chica, aparezca el scroll horizontal en vez de deformarse */
     min-width: 1200px; 
 }
 
-/* CONTENEDOR PRINCIPAL: 
-   Aquí está la clave. Le damos un ancho FIJO de 1200px.
-   No usamos porcentajes (%). 
-*/
+
 .main-container {
     width: 1200px; 
-    margin: 0 auto; /* Centrado en pantallas grandes */
+    margin: 0 auto; 
     padding: 40px 0;
 }
 
-/* Títulos generales */
 h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -32,7 +26,6 @@ h2 {
     color: #222;
 }
 
-/* Línea divisoria */
 .divider {
     border: 0;
     border-top: 1px solid #ddd;
@@ -47,25 +40,24 @@ h2 {
 .hero-content {
     display: flex;
     align-items: center;
-    /* Espacio fijo entre columnas */
     gap: 50px; 
 }
 
 /* Slider del Hero: Tamaño FIJO */
 .hero-slider-container {
-    width: 600px; /* Mitad exacta de 1200px menos el gap */
+    width: 600px; 
     height: 400px;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    flex-shrink: 0; /* Evita que se encoja nunca */
+    flex-shrink: 0; 
 }
 
 .hero-slide {
     position: absolute;
     top: 0;
     left: 0;
-    width: 600px; /* Fijo */
+    width: 600px; 
     height: 400px;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
@@ -81,9 +73,8 @@ h2 {
     object-fit: cover;
 }
 
-/* Texto del Hero: Tamaño FIJO */
 .hero-text {
-    width: 550px; /* El resto del espacio disponible */
+    width: 550px; 
 }
 
 .hero-text p {
@@ -92,7 +83,7 @@ h2 {
     text-align: justify;
 }
 
-/* ===== OBJETIVOS (GRID) ===== */
+/* ===== OBJETIVOS===== */
 .objectives-section {
     text-align: center;
 }
@@ -100,17 +91,16 @@ h2 {
 .objectives-grid {
     display: flex;
     justify-content: space-between;
-    /* Sin gap flexible, usaremos anchos exactos */
 }
 
 .objective-card {
-    width: 380px; /* 3 tarjetas de 380px + espacios = 1200px aprox */
+    width: 380px; 
     padding: 10px;
-    border: 1px solid transparent; /* Para mantener caja */
+    border: 1px solid transparent; 
 }
 
 .objective-card img {
-    width: 360px; /* Imagen fija */
+    width: 360px; 
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
@@ -121,11 +111,11 @@ h2 {
 .methodology-content {
     display: flex;
     align-items: center;
-    gap: 50px; /* Espacio fijo */
+    gap: 50px; 
 }
 
 .methodology-text {
-    width: 750px; /* Ancho fijo para texto */
+    width: 750px; 
 }
 
 .methodology-text ul {
@@ -143,12 +133,12 @@ h2 {
 }
 
 .methodology-image {
-    width: 400px; /* Ancho fijo para contenedor de imagen */
+    width: 400px; 
     text-align: center;
 }
 
 .methodology-image img {
-    width: 300px; /* Tamaño fijo de imagen QR */
+    width: 300px; 
     height: auto;
     padding: 10px;
     background: #fff;
@@ -164,7 +154,7 @@ h2 {
 .slider-controls {
     display: flex;
     justify-content: flex-end;
-    width: 1200px; /* Asegura que los botones estén alineados al contenedor */
+    width: 1200px; 
     margin: 0 auto 10px auto;
     gap: 10px;
 }
@@ -202,62 +192,186 @@ h2 {
 }
 
 .comment-slide img {
-    width: 380px; /* Tamaño fijo por imagen (380x3 = 1140, sobra espacio para margen) */
+    width: 380px; /* Tamaño fijo por imagen*/
     height: 380px; /* Cuadradas fijas */
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #eee;
 }
 
+
 @keyframes fadeEffect {
     from {opacity: 0.4;}
     to {opacity: 1;}
 }
 
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+
+/* --- 1. ESCRITORIOS GRANDES (Más de 1281px) --- */
+
 @media (min-width: 1281px) {
     body {
-        background-color: red;
-    }
-
-    #image {
-        content: url('image-large.jpg');
+        background-color: aqua; 
     }
 }
+
+
+/* --- 2. ESCRITORIOS PEQUEÑOS / LAPTOPS (1025px a 1280px) --- */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     body {
-        background-color: green;
+        background-color: green; /* Test */
+        min-width: 100%; 
     }
 
-    #image {
-        content: url('image-medium.jpg');
+    .main-container {
+        width: 95%; 
     }
+
+    .hero-slider-container {
+        width: 50%; 
+    }
+    .hero-slide, .hero-slide img {
+        width: 100%; 
+    }
+    .hero-text {
+        width: 45%; 
+    }
+    .objective-card {
+        width: 32%;
+    }
+    .objective-card img {
+        width: 100%; 
+        height: auto;
+    }
+
+    .slider-controls, .comments-slider-wrapper, .comments-slides-container, .comment-slide {
+        width: 100%;
+    }
+    .comment-slide img {
+        width: 32%; 
+        height: auto;
+    }
+    
+    .methodology-text { width: 60%; }
+    .methodology-image { width: 35%; }
+    .methodology-image img { width: 100%; }
 }
+
+
+/* --- 3. TABLETS (768px a 1024px) --- */
 
 @media (min-width: 768px) and (max-width: 1024px) {
     body {
-        background-color: blue;
+        background-color: blue; /* Test */
+        min-width: 100%;
     }
 
-    #image {
-        content: url('image-small.jpg');
+    .main-container {
+        width: 90%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .hero-slider-container, .hero-text {
+        width: 100%; 
+    }
+    .hero-slider-container { height: 350px; } 
+
+    .objective-card {
+        width: 32%; 
+    }
+    .objective-card img {
+        width: 100%;
+        height: 150px; 
+    }
+    .objective-card p {
+        font-size: 0.9rem; 
+    }
+
+
+    .methodology-content {
+        flex-direction: column;
+    }
+    .methodology-text, .methodology-image {
+        width: 100%;
+    }
+
+    /* COMENTARIOS */
+    .slider-controls, .comments-slider-wrapper, .comments-slides-container, .comment-slide {
+        width: 100%;
+    }
+    .comment-slide img {
+        width: 32%;
+        height: auto;
     }
 }
 
+
+/* --- 4. MÓVILES (Menos de 767px) --- */
+
 @media (max-width: 767px) {
     body {
-        background-color: yellow;
+        background-color: yellow; 
+        min-width: 100%;
     }
 
-    #image {
-        content: url('image-mobile.jpg');
+    .main-container {
+        width: 90%;
+        padding: 20px 0;
     }
 
-    h1 {
-        font-size: 1.8em;
+    h2 { font-size: 1.8em; text-align: center; }
+
+
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero-slider-container {
+        width: 100%;
+        height: 250px;
+    }
+    .hero-slide, .hero-slide img {
+        width: 100%;
+        height: 100%;
+    }
+    .hero-text { width: 100%; }
+
+
+    .objectives-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .objective-card {
+        width: 100%;
+        border-bottom: 1px solid #ddd; /* Separador */
+    }
+    .objective-card img {
+        width: 100%;
+        height: auto;
     }
 
-    p {
-        font-size: 1em;
+
+    .methodology-content {
+        flex-direction: column-reverse; 
+    }
+    .methodology-text, .methodology-image {
+        width: 100%;
+    }
+
+   
+    .slider-controls { width: 100%; justify-content: center; }
+    .comments-slider-wrapper, .comments-slides-container, .comment-slide {
+        width: 100%;
+    }
+   
+    .comment-slide img {
+        width: 31%; 
+        height: auto; 
     }
 }
