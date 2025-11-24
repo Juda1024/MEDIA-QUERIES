@@ -349,7 +349,7 @@ h2 {
     }
     .objective-card {
         width: 100%;
-        border-bottom: 1px solid #ddd; /* Separador */
+        border-bottom: 1px solid red; /* Separador */
     }
     .objective-card img {
         width: 100%;
