@@ -10,21 +10,18 @@
 
     <div class="main-container">
 
-        <section class="hero-section mb-5">
-            <div class="row align-items-center">
-                <div class="col-6">
-                    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="./public/assets/images/Home1.jpeg" class="d-block img-cover" alt="Slide 0">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./public/assets/images/Home2.jpg" class="d-block img-cover" alt="Slide 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./public/assets/images/Home3.jpg" class="d-block img-cover" alt="Slide 2">
-                            </div>
-                        </div>
+        <section class="hero-section">
+            <div class="hero-content">
+                
+                <div class="hero-slider-container">
+                    <div class="hero-slide active">
+                        <img src="./public/assets/images/Home1.jpeg" alt="Slide 1">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="./public/assets/images/Home2.jpg" alt="Slide 2">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="./public/assets/images/Home3.jpg" alt="Slide 3">
                     </div>
                 </div>
 
@@ -40,26 +37,20 @@
 
         <hr class="divider">
 
-        <section class="image-grid mb-5 text-center">
-            <h2 class="mb-4 fw-bold">Objetivos</h2>
-            <div class="row">
-                <div class="col-4">
-                    <div class="p-2">
-                        <img src="./public/assets/images/Obj1.jpg" class="obj-img mb-3" alt="Objetivo 1">
-                        <p>Brindar ayuda directa a personas y animales vulnerables.</p>
-                    </div>
+        <section class="objectives-section">
+            <h2>Objetivos</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <img src="./public/assets/images/Obj1.jpg" alt="Objetivo 1">
+                    <p>Brindar ayuda directa a personas y animales vulnerables.</p>
                 </div>
-                <div class="col-4">
-                    <div class="p-2">
-                        <img src="./public/assets/images/Obj2.png" class="obj-img mb-3" alt="Objetivo 2">
-                        <p>Promover la solidaridad y participación de la comunidad.</p>
-                    </div>
+                <div class="objective-card">
+                    <img src="./public/assets/images/Obj2.png" alt="Objetivo 2">
+                    <p>Promover la solidaridad y participación de la comunidad.</p>
                 </div>
-                <div class="col-4">
-                    <div class="p-2">
-                        <img src="./public/assets/images/Obj3.jpg" class="obj-img mb-3" alt="Objetivo 3">
-                        <p>Organizar donaciones y recursos para maximizar el impacto.</p>
-                    </div>
+                <div class="objective-card">
+                    <img src="./public/assets/images/Obj3.jpg" alt="Objetivo 3">
+                    <p>Organizar donaciones y recursos para maximizar el impacto.</p>
                 </div>
             </div>
         </section>
@@ -80,8 +71,8 @@
                         Puedes informarte más escaneando el código QR &rarr;
                     </p>
                 </div>
-                <div class="col-4 text-center">
-                    <img src="./public/assets/images/qr.webp" class="qr-img shadow p-2 bg-white rounded" alt="Código QR">
+                <div class="methodology-image">
+                    <img src="./public/assets/images/qr.webp" alt="Código QR">
                 </div>
             </div>
         </section>
@@ -99,46 +90,22 @@
 
                 <div class="comments-slides-container">
                     
-                    <div class="carousel-item active">
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="Comentario 1">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="Comentario 2">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen1.webp" class="comment-img" alt="Comentario 3">
-                            </div>
-                        </div>
+                    <div class="comment-slide active">
+                        <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="1">
+                        <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="2">
+                        <img src="./public/assets/images/comen1.webp" class="comment-img" alt="3">
                     </div>
 
-                    <div class="carousel-item">
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="Comentario 4">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="Comentario 5">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen1.webp" class="comment-img" alt="Comentario 6">
-                            </div>
-                        </div>
+                    <div class="comment-slide">
+                        <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="4">
+                        <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="5">
+                        <img src="./public/assets/images/comen1.webp" class="comment-img" alt="6">
                     </div>
 
-                    <div class="carousel-item">
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen1.webp" class="comment-img" alt="Comentario 7">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="Comentario 8">
-                            </div>
-                            <div class="col-4">
-                                <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="Comentario 9">
-                            </div>
-                        </div>
+                    <div class="comment-slide">
+                        <img src="./public/assets/images/comen1.webp" class="comment-img" alt="7">
+                        <img src="./public/assets/images/comen2.jpg" class="comment-img" alt="8">
+                        <img src="./public/assets/images/comen3.jpg" class="comment-img" alt="9">
                     </div>
 
                 </div>
@@ -159,10 +126,13 @@
             });
         }
 
-        setInterval(() => {
-            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
-            showHeroSlide(currentHeroIndex);
-        }, 3000); // 3 segundos
+        // Solo activar intervalo si existen slides
+        if(heroSlides.length > 0) {
+            setInterval(() => {
+                currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+                showHeroSlide(currentHeroIndex);
+            }, 3000); 
+        }
 
         /* --- Lógica Comentarios Slider (Manual) --- */
         let currentCommentIndex = 0;
@@ -177,15 +147,17 @@
             });
         }
 
-        nextBtn.addEventListener('click', () => {
-            currentCommentIndex = (currentCommentIndex + 1) % commentSlides.length;
-            showCommentSlide(currentCommentIndex);
-        });
+        if(nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentCommentIndex = (currentCommentIndex + 1) % commentSlides.length;
+                showCommentSlide(currentCommentIndex);
+            });
 
-        prevBtn.addEventListener('click', () => {
-            currentCommentIndex = (currentCommentIndex - 1 + commentSlides.length) % commentSlides.length;
-            showCommentSlide(currentCommentIndex);
-        });
+            prevBtn.addEventListener('click', () => {
+                currentCommentIndex = (currentCommentIndex - 1 + commentSlides.length) % commentSlides.length;
+                showCommentSlide(currentCommentIndex);
+            });
+        }
     </script>
 
 </body>
